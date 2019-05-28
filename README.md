@@ -1,6 +1,6 @@
 <!-- PROJECT SHIELDS -->
 
-[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/contributors/)
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://github.com/renzodamgo/avengers-1/graphs/contributors)
 
 # Trabajo Final
 ## Problema:

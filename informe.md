@@ -1,41 +1,39 @@
-Algoritmos y Estructuras de Datos
-=================================
+# ALGORITMOS Y ESTRUCTURAS DE DATOS
 
-Trabajo Final
--------------
+## TRABAJO FINAL
 
-### Integrantes
-* Jon Snow
-* Tormund
-* Ghost el direwolf
-* Yo
+### INTEGRANTES
+* Joaquín Aguirre
+* Bruno Tiglla Arrascue
+* Renzo Damián Gomez
 
-### Introducción
+### INTRODUCCIÓN
 
-_Motivacón, Problema general, Solucion general, Lo que se espera_
+En el curso de especialidad de la carrera de Ciencias de Computación, Algoritmos y Estructura de datos se les ha encargado a los alumnos un trabajo que tiene como competencia general, desarrollar un pensamiento innovador capaz de diseñar sistemas, componentes o procesos para encontrar soluciones en la atención a las necesidades de la gente.
+En este caso trabajar con proyectos de DataScience para poder manejar grandes cantidades de datos de manera eficiente, mediante la búsqueda, organizacón y filtrado de datos.
 
-### Problema
+### PROBLEMA
 
-### Objetivos
+-Parte de Renzo
 
-_Ver la taxonomía de Bloom para sleccionar verbos_
-_Objetivo General: dar solución al problema_
-_Objetivos específicos: analaizar, diseñar, implementar_
+### OBJETIVOS
 
-### Marco Conceptual
+** Objetivo General: ** 
+- Al finalizar el curso el estudiante construye tipos de datos abstractos y algoritmos teniendo en cuenta las restricciones impuestas por los recursos computacionales.
 
-_Dataframes, Ordenamiento, Busqueda, ARboles_
+** Objetivos Específicos: **
+1. **Crear** una biblioteca basada en pandas que nos permita manejar una gran cantidad de datos.
+2. **Implementar la biblioteca** que nos permita importar, indexar, seleccionar, filtrar y ordenar datos por columnas. Además de exportar datos a archivos planos con diferentes formatos.
+3. **Testear** el buen y completo funcionamiento de la biblioteca.
 
-```c++
-int main() {
-    return 0;
-}
-```
+### MARCO CONCEPTUAL
 
-### Diagrama de Clases (alto nivel)
+- Parte de Bruno
+
+### DIAGRAMA DE CLASES (ALTO NIVEL)
 
 ![Diagrama de Clases](DiagramaDeClases.png)
 
-### Cronograma
+### CRONOGRAMA
 
-_Referencia a milestoesndel proyecto_
+Referencia a milestones del proyecto

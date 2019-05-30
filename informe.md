@@ -14,7 +14,8 @@ En este caso trabajar con proyectos de DataScience para poder manejar grandes ca
 
 ### PROBLEMA
 
--Parte de Renzo
+Cuando se quiere trabajar con grandes cantidades de datos, se necesita acceder a determinada información de forma rápida eficiente, veloz y consumiendo la menor cantidad de recursos posibles. Esto representa un problema considerable en la mayoría de proyectos de software destinados a un gran público o empresas con un gran número de clientes.  
+En el proceso de desarrollo de software, una de las partes más importantes es que sea escalable conservando la usabilidad y los tiempos de carga. Para que nuestro programa cumpla con los requisitos establecidos se deberá crear una estructura capaz de soportar un millón de datos y ser capaz de ubicar, indexar y mostrar los datos en tiempo logarítmico.
 
 ### OBJETIVOS
 

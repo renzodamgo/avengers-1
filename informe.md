@@ -25,7 +25,7 @@ En el proceso de desarrollo de software, una de las partes más importantes es q
 **Objetivos Específicos:**
 1. **Crear** una biblioteca basada en pandas que nos permita manejar una gran cantidad de datos.
 2. **Implementar la biblioteca** que nos permita importar, indexar, seleccionar, filtrar y ordenar datos por columnas. Además de exportar datos a archivos planos con diferentes formatos.
-3. **Testear** el buen y completo funcionamiento de la biblioteca.
+3. **Testear** el buen y completo funcionamiento de la biblioteca..
 
 ### MARCO CONCEPTUAL
 

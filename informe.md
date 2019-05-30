@@ -29,7 +29,30 @@ En el proceso de desarrollo de software, una de las partes más importantes es q
 
 ### MARCO CONCEPTUAL
 
-- Parte de Bruno
+#### DATAFRAME 
+
+Es una estructura de datos tabular bidimensional, potencialmente heterogénea, con ejes etiquetados (filas y columnas).
+Es decir, los datos se alinean de forma tabular en filas y columnas. Éste consta de tres componentes principales: los datos, las filas y las columnas.
+
+#### ORDENAMIENTO
+
+Es la operación de arreglar los registros de una tabla en algún orden secuencial de acuerdo a un criterio de ordenamiento.
+Éste se efectúa con base en el valor de algún campo en un registro. El propósito principal de un ordenamiento es el de facilitar las búsquedas de los miembros del conjunto ordenado.
+El ordenar un grupo de datos significa mover los datos o sus referencias para que queden en una secuencia tal que represente un orden, el cual puede ser numérico, alfabético o incluso alfanumérico, ascendente o descendente.
+En la computación el ordenamiento de datos también cumple un rol muy importante, ya sea como un fin en sí o como parte de otros procedimientos más complejos.
+Se han desarrollado muchas técnicas en este ámbito, cada una con características específicas, y con ventajas y desventajas sobre las demás.Algoritmos de búsqueda
+
+#### BÚSQUEDA
+
+Un algoritmo de búsqueda como lo dice su nombre es una secuencia de pasos para encontrar dentro de una lista de datos un dato determinado.
+Los algoritmos de búsqueda varían según los pasos o métodos que emplea para encontrar datos, pero todos cumplen con el mismo fin.
+Entre los más frecuentes se encuentran la búsqueda binaria, lineal.
+
+La búsqueda lineal es la técnica más simple y funciona bien con arreglos pequeños y no ordenados, consiste en comparar la clave de búsqueda con todos los elementos del arreglo.
+
+La búsqueda binaria es la técnica de más alta velocidad y funciona eficientemente con arreglos grandes y ordenados previamente, consiste en eliminar, tras cada comparación, la mitad de los elementos del arreglo en los que se efectúa la búsqueda.
+Primero localiza el elemento central del arreglo y luego lo compara con la clave de búsqueda, si son iguales, se ha encontrado dicha clave y se devuelve el subíndice de ese elemento.
+De otro modo, el problema se reduce a buscar en una mitad del arreglo.
 
 ### DIAGRAMA DE CLASES (ALTO NIVEL)
 

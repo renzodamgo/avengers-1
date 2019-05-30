@@ -60,4 +60,4 @@ De otro modo, el problema se reduce a buscar en una mitad del arreglo.
 
 ### CRONOGRAMA
 
-Referencia a milestones del proyecto
+Referencia a milestones del proyecto.

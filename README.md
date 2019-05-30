@@ -8,4 +8,4 @@ Cuando queremos trabajar con grandes cantidades de datos necesitamos acceder a l
 ## Objetivos:
 1. Crear una biblioteca que nos permita manejar una gran cantidad de datos.
 2. Implementar biblioteca 
-3. Testear biblioteca 
+3. Testear biblioteca .

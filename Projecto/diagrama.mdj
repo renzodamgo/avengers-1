@@ -13,15 +13,6 @@
 			"ownedElements": [
 				{
 					"_type": "UMLClassDiagram",
-					"_id": "AAAAAAFF+qBtyKM79qY=",
-					"_parent": {
-						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
-					},
-					"name": "Main",
-					"defaultDiagram": true
-				},
-				{
-					"_type": "UMLClassDiagram",
 					"_id": "AAAAAAFrXfoYIyRGkek=",
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
@@ -1773,7 +1764,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfo1CiRJgdg="
 							},
-							"name": "Columna colu"
+							"name": "Columna colu",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1781,7 +1773,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfo1CiRJgdg="
 							},
-							"name": "Fila fil"
+							"name": "Fila fil",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -1885,7 +1878,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfprcSRzJJQ="
 							},
-							"name": "vector T col"
+							"name": "vector T col",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1893,7 +1887,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfprcSRzJJQ="
 							},
-							"name": "string nombre"
+							"name": "string nombre",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -1901,7 +1896,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfprcSRzJJQ="
 							},
-							"name": "char tipo"
+							"name": "char tipo",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -1959,7 +1955,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfp+FySdQpY="
 							},
-							"name": "int dx"
+							"name": "int dx",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -1987,7 +1984,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFrXfqJkyTH5mo="
 							},
-							"name": "T elem"
+							"name": "T elem",
+							"type": ""
 						}
 					]
 				},

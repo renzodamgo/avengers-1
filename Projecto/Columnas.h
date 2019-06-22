@@ -1,17 +1,13 @@
-template<typename T>
-class Columnas
+#include <iostream>
+#include <vector>
+#include <string>
+#include <map>
+
+using namespace std;
+
+class Col
 {
 private:
-	vector<T>Col;
-	string Nombre;
-	char Tipo;
-
-public:
-
-	//Columnas(vector col, string nombre, char tipo) : Col(col), Nombre(nombre), Tipo(tipo) {}
-	//~Columnas() {}
-
-
-	void getCol(string nom);
-
+	vector<string>data;
+	string name;
 };

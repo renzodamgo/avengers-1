@@ -1,20 +1,18 @@
-#pragma once
-#include "DataFrame.h"
-#pragma once
-#include "Columnas.h"
+#include "Columnas.h"}
 
-template<typename T>
+typedef map<string, Col*> colmap;
 class Filas
 {
 private:
 
-	int dx;
+	int idx;
+	colmap cols;
 
 public:
 
-	Filas(int _dx) : dx(_dx) { }
+	Filas(colmap* cols) : cols(cols) { }
 
-	string getVal(string nom) {
-		// return this ->
+	string getData(string name) {
+		return(*cols)[name][idx];
 	}
 };

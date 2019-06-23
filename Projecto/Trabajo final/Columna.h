@@ -10,15 +10,20 @@ private:
 	string nombre;
 	bool numero;
 	vector<string> data;
+	int filas;
 
 public:
-	Columna(bool numero = false) : numero(numero) {};
+	Columna(bool numero = false, int filas = 0) : numero(numero),filas(filas) {};
 	~Columna();
-	void inputData(string datadelCSV) { data.push_back(datadelCSV); }
+	void inputData(string datadelCSV) {
+		data.push_back(datadelCSV);
+		filas++;
+	}
 	void showcol() {
 		for (auto dat : data) {
 			cout << dat << endl;
 		}
-		cout << "fin";
+		cout << "nro de filas: ";
+		cout << filas;
 	}
 };

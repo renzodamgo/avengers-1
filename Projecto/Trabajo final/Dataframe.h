@@ -20,7 +20,6 @@ public:
 		ifstream data;
 		data.open(nombre);
 		string line;
-		int i = 0;
 		getline(data, line);
 		stringstream ss(line);
 		for (int j = 0; j < ncol; ++j) {
@@ -28,21 +27,24 @@ public:
 			colmap.insert(pair<string, Columna*>(line, new Columna()));
 			colnames.push_back(line);
 		};
-
+		int i=1;
 		while (getline(data, line)) {
+			filas.push_back(new Fila(i));
 			stringstream ss(line);
 			for (int j = 0; j < ncol; ++j) {
 				getline(ss, line, ',');
 				/* cout << line << " \\ "; */
 				colmap[colnames[j]]->inputData(line);
 			}
+			i++;
 		}
 	}
-	/*void mostrarcolumnas() {
+	void mostrarcolumnas() {
 		map<string, Columna*>::iterator itr;
 		for (itr = colmap.begin(); itr != colmap.end(); ++itr) {
 			cout << itr->first << '\t';
 		}
-	}*/
-	void mostrarcolumna(string nombreCol) { colmap[nombreCol]->showcol(); }
+	}
+	void mostrarcolumna(string nombreCol) { if (colmap[nombreCol] != nullptr)colmap[nombreCol]->showcol();
+}
 };

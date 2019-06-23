@@ -34,5 +34,14 @@
     <None Include="data.csv">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="SalesJan.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="elec.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="annual-enterprise-survey-2017-financial-year-provisional-size-bands-csv (1).csv">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

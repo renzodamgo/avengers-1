@@ -10,9 +10,10 @@ int main() {
 	cout << "Nombre del archivo: ";
 	cin >> archivo; */
 	Dataframe* dat = new Dataframe();
-	dat->cargarArchivo("data.csv", 4);
+	dat->cargarArchivo("annual-enterprise-survey-2017-financial-year-provisional-size-bands-csv (1).csv", 7);
 	string nombredecol;
-	cin >> nombredecol;
-	dat->mostrarcolumna(nombredecol);
+	//cin >> nombredecol;
+	//dat->mostrarcolumnas();
+	dat->mostrarcolumna("industry_name_ANZSIC");
 	system("pause");
 }

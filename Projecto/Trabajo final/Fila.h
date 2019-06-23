@@ -1,8 +1,10 @@
 #pragma once
-class Fila {
+class Fila
+{
 private:
-	
+	int idx;
 public:
-	Fila() {}
-
+	Fila(int idx) :idx(idx) {};
+	~Fila();
 };
+

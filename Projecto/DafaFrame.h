@@ -4,11 +4,9 @@
 #include <iostream>
 #include <conio.h>
 #include <functional>
-
+#include "Arbolito.h"
 
 using namespace std;
-
-
 
 class DF {
 	colmap columnas;

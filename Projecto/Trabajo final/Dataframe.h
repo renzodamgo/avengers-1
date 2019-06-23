@@ -1,11 +1,11 @@
-#Pragma once
+#pragma once
 #include "Fila.h"
 #include <fstream>
 #include <map>
 #include <sstream>
 #include <string>
 #include <vector>
-#include <Columna.h>
+#include "Columna.h"
 using namespace std;
 class Dataframe {
 private:
@@ -38,11 +38,11 @@ public:
 			}
 		}
 	}
-	void mostrarcolumnas() {
+	/*void mostrarcolumnas() {
 		map<string, Columna*>::iterator itr;
 		for (itr = colmap.begin(); itr != colmap.end(); ++itr) {
 			cout << itr->first << '\t';
 		}
-	}
+	}*/
 	void mostrarcolumna(string nombreCol) { colmap[nombreCol]->showcol(); }
-}
+};

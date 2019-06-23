@@ -124,6 +124,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Columna.h" />
+    <ClInclude Include="Dataframe.h" />
+    <ClInclude Include="Fila.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="menu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

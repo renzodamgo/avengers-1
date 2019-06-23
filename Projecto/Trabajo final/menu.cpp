@@ -14,4 +14,5 @@ int main() {
 	string nombredecol;
 	cin >> nombredecol;
 	dat->mostrarcolumna(nombredecol);
+	system("pause");
 }

@@ -6,7 +6,7 @@ class Filas
 private:
 
 	int idx;
-	colmap cols;
+	colmap* cols;
 
 public:
 

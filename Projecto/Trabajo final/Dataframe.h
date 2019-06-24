@@ -52,6 +52,10 @@ public:
 	void guardarDataframe(string nombre) {
 		ofstream data;
 		data.open(nombre);
+		for (auto col : colmap) {
+			data << col.first << ",";
+		}
+		data << endl;
 		for (auto fil : filas) {
 			for (auto col : colmap) {
 				data << col.second->getData(fil->getIdx()) << ",";

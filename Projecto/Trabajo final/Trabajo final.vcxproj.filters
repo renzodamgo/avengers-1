@@ -24,6 +24,9 @@
     <ClInclude Include="Fila.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="menu.cpp">
@@ -40,7 +43,7 @@
     <None Include="elec.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="annual-enterprise-survey-2017-financial-year-provisional-size-bands-csv (1).csv">
+    <None Include="final.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

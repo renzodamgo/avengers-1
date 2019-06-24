@@ -1,3 +1,4 @@
+#pragma once
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -25,5 +26,8 @@ public:
 		}
 		cout << "nro de filas: ";
 		cout << filas;
+	}
+	string getData(int idx){
+		return data[idx];
 	}
 };

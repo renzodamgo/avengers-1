@@ -11,12 +11,14 @@ class Dataframe {
 private:
 	map<string, Columna*> colmap;
 	vector<Fila*> filas;
+	vector<string> colnames;
+	int ncol;
 
 public:
 	Dataframe() {};
 	~Dataframe();
 	void cargarArchivo(string nombre, int ncol) {
-		vector<string> colnames;
+		this->ncol = ncol;
 		ifstream data;
 		data.open(nombre);
 		string line;
@@ -27,7 +29,7 @@ public:
 			colmap.insert(pair<string, Columna*>(line, new Columna()));
 			colnames.push_back(line);
 		};
-		int i=1;
+		int i=0;
 		while (getline(data, line)) {
 			filas.push_back(new Fila(i));
 			stringstream ss(line);
@@ -46,5 +48,16 @@ public:
 		}
 	}
 	void mostrarcolumna(string nombreCol) { if (colmap[nombreCol] != nullptr)colmap[nombreCol]->showcol();
-}
+	}
+	void guardarDataframe(string nombre) {
+		ofstream data;
+		data.open(nombre);
+		for (auto fil : filas) {
+			for (auto col : colmap) {
+				data << col.second->getData(fil->getIdx()) << ",";
+			}
+			data << endl;
+		}
+		
+	}
 };

@@ -6,5 +6,6 @@ private:
 public:
 	Fila(int idx) :idx(idx) {};
 	~Fila();
+	int getIdx() { return idx; }
 };
 

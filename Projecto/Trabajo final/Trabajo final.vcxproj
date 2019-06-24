@@ -127,12 +127,13 @@
     <ClInclude Include="Columna.h" />
     <ClInclude Include="Dataframe.h" />
     <ClInclude Include="Fila.h" />
+    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="annual-enterprise-survey-2017-financial-year-provisional-size-bands-csv (1).csv" />
+    <None Include="final.csv" />
     <None Include="data.csv" />
     <None Include="elec.csv" />
     <None Include="SalesJan.csv" />

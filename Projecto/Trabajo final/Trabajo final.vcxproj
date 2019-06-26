@@ -132,11 +132,8 @@
     <ClCompile Include="menu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="final.csv" />
+    <None Include="100_Sales_Records.csv" />
     <None Include="data.csv" />
-    <None Include="elec.csv" />
-    <None Include="PEPE.csv" />
-    <None Include="SalesJan.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

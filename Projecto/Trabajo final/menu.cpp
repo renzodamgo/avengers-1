@@ -7,14 +7,15 @@
 using namespace std;
 
 void menu() {
-	cout << "(1) Cargar archivo" << endl
-		<< "(2) Guardar archivo" << endl
-		<< "(3) Listar archivo" << endl
-		<< "(4) Crear DataFrame" << endl
-		<< "(5) Mostrar DataFframe" << endl
+	cout << "(1) Importar Datos" << endl
+		<< "(2) Indexado por Columnas" << endl
+		<< "(3) Seleccion por columnas" << endl
+		<< "(4) Exportar Datos" << endl
+		<< "(5) Crear DataFrame" << endl
+		<< "(6) Mostrar DataFframe" << endl
 		<< "(0) Salir" << endl;
 }
-void cargarDF(vector<Dataframe*>& dfs) {
+void Importar_Datos(vector<Dataframe*>& dfs) {
 	string name;
 	int ncol;
 	cout << "Nombre del archivo: ";
@@ -24,10 +25,10 @@ void cargarDF(vector<Dataframe*>& dfs) {
 	Dataframe* dat = new Dataframe();
 	dat->cargarArchivo(name, ncol);
 	dfs.push_back(dat);
-	dfs[1]->mostrarcolumnas();
+	dfs[0]->mostrarcolumnas();
 }
 
-void guardarDF(vector<Dataframe*>& dfs) {
+void Exportar_Datos(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
 	do {
@@ -51,8 +52,8 @@ void listarDFs(vector<DF*>& dfs) {
 		cout << ++i << "]" << endl; // Todo imprimir alguna otra inf del DF
 	}
 }
-
-DF* seleccionar(DF* df) {
+*/
+Dataframe* seleccionar(Dataframe* df) {
 	vector<string> cols;
 	string col;
 	do {
@@ -64,10 +65,12 @@ DF* seleccionar(DF* df) {
 		}
 	} while (col != "");
 	if (cols.size() > 0) {
-		return df.seleccionar(cols);
+	//q	df->seleccionar(cols);
+		return df;
 	}
 	return nullptr;
 }
+/*
 DF* filtrar(DF* df) { return nullptr; }
 DF* ordenar(DF* df) { return nullptr; }
 
@@ -116,16 +119,16 @@ int main() {
 		cin >> op;
 		switch (op) {
 		case '1':
-			cargarDF(dfs);
+			Importar_Datos(dfs);
 			break;
 		case '2':
-			guardarDF(dfs);
+			
 			break;
 		case '3':
 			cout << "Bye Bye" << endl;
 			break;
 		case '4':
-			cout << "Bye Bye" << endl;
+			Exportar_Datos(dfs);
 			break;
 		}
 

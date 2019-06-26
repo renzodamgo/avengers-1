@@ -14,6 +14,7 @@ private:
 	vector<string> data;
 	int filas;
 	map<string, int> dat;
+	//vector<string> temp;
 
 public:
 	Columna(bool numero = false, int filas = 0) : numero(numero),filas(filas) {};
@@ -80,5 +81,23 @@ public:
 		}
 
 	}
+	
+	bool fron(int dx, char C){
+		if (data[dx].front == C)
+			return true;
+		else
+			return false;
+	}
+
+
+	bool back(int dx, char C) {
+		if (data[dx].back == C)
+			return true;
+		else
+			return false;
+
+	}
+
+
 
 };

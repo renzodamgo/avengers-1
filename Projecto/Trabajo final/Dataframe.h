@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <cstring>
 #include "Columna.h"
 using namespace std;
 class Dataframe {
@@ -76,4 +77,31 @@ public:
 		}
 		
 	}
+
+	
+	void Filtrar_Empieza(string nCol, char C) {
+
+		vector<string> temp;
+
+		for (auto fil : filas)
+			if(colmap[nCol]->fron(fil->getIdx(), C) == true)
+			{ 
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+			}
+	}
+
+	void Filtrar_Termino(string nCol, char C) {
+		vector<string> temp;
+		for (auto fil : filas)
+			if (colmap[nCol]->back(fil->getIdx(), C) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+			}
+	}
+
+
+
+
+
+
 };

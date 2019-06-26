@@ -32,8 +32,7 @@ public:
 		return data[idx];
 	}
 
-	// 	vector<string> v{"Maria", "Julio" , "Jojo"};
-	//	quick_sort(v);
+	
 	void quicksort(vector<string>& names, string min, string max) {
 
 		int temp = 0, i = 0;

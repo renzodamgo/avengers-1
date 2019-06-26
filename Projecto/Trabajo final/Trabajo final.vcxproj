@@ -127,7 +127,6 @@
     <ClInclude Include="Columna.h" />
     <ClInclude Include="Dataframe.h" />
     <ClInclude Include="Fila.h" />
-    <ClInclude Include="Menu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="menu.cpp" />

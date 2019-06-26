@@ -24,7 +24,7 @@ void cargarDF(vector<Dataframe*>& dfs) {
 	Dataframe* dat = new Dataframe();
 	dat->cargarArchivo(name, ncol);
 	dfs.push_back(dat);
-	dfs[1]->mostrarcolumnas();
+	dfs[0]->mostrarcolumnas();
 }
 
 void guardarDF(vector<Dataframe*>& dfs) {

@@ -42,7 +42,18 @@ void Exportar_Datos(vector<Dataframe*>& dfs) {
 
 	// TODO Guardar Dataframe en archivo
 }
+void MostrarDataframe(vector<Dataframe*>& dfs) {
+	int i;
+	string name;
+	do {
+		cout << "Seleccionar un DF [del 1 al " << dfs.size() << "]";
+		cin >> i;
+		--i;
+	} while (i < 0 || i >= dfs.size());
+	
+	dfs[i]->mostrarTodo();
 
+}
 
 /*
 void listarDFs(vector<DF*>& dfs) {
@@ -128,6 +139,12 @@ int main() {
 			break;
 		case '4':
 			Exportar_Datos(dfs);
+			break;
+		case '5':
+			Exportar_Datos(dfs);
+			break;
+		case '6':
+			MostrarDataframe(dfs);
 			break;
 		}
 

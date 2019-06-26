@@ -41,6 +41,18 @@ public:
 			i++;
 		}
 	}
+	void mostrarTodo() {
+		for (auto col : colmap) {
+			cout << col.first << "\t\t";
+		}
+		cout << endl;
+		for (auto fil : filas) {
+			for (auto col : colmap) {
+				cout << col.second->getData(fil->getIdx()) << "\t\t";
+			}
+			cout << endl;
+		}
+	}
 	void mostrarcolumnas() {
 		map<string, Columna*>::iterator itr;
 		for (itr = colmap.begin(); itr != colmap.end(); ++itr) {

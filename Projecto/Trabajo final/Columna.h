@@ -21,7 +21,7 @@ public:
 	void inputData(string datadelCSV) {
 		data.push_back(datadelCSV);
 		filas++;
-		dat.insert(pair<string, int>(datadelCSV, 1));
+		//dat.insert(pair<string, int>(datadelCSV, 1));
 	}
 	void showcol() {
 		for (auto dat : data) {
@@ -31,4 +31,56 @@ public:
 	string getData(int idx){
 		return data[idx];
 	}
+
+	// 	vector<string> v{"Maria", "Julio" , "Jojo"};
+	//	quick_sort(v);
+	void quicksort(vector<string>& names, string min, string max) {
+
+		int temp = 0, i = 0;
+		string lowMin = max,
+			lowMax = min,
+			highMin = max,
+			highMax = min,
+			pivot;
+		vector<string>  below, above;
+		if (min != max) {
+			pivot = (max[i] + min[i]) / 2;
+			while (temp < names.size()) {
+				if (names[temp] <= pivot) {
+					if (lowMax.compare(names[temp]) < 0) {
+						lowMax = names[temp];
+					}
+					if (lowMin.compare(names[temp]) > 0) {
+						lowMin = names[temp];
+					}
+					below.push_back(names[temp]);
+				}
+				else {
+					if (highMax.compare(names[temp]) < 0) {
+						highMax = names[temp];
+					}
+					if (highMin.compare(names[temp]) > 0) {
+						highMin = names[temp];
+					}
+					above.push_back(names[temp]);
+				}
+				temp++;
+			}
+			if ((below.size() > 1) && (names.size() != below.size())) {
+				quicksort(below, lowMin, lowMax);
+			}
+			if ((above.size() > 1) && (names.size() != above.size())) {
+				quicksort(above, highMin, highMax);
+			}
+			for (size_t i = 0; i < below.size(); i++) {
+				names[i] = below[i];
+			}
+			for (size_t i = below.size(); i < names.size(); i++) {
+				names[i] = above[i - below.size()];
+			}
+
+		}
+
+	}
+
 };

@@ -41,9 +41,7 @@ void Seleccionar(Dataframe*& df) {
 		cin >> col;
 		cols.push_back(col);
 	}
-	for (auto c : cols) {
-		cout << c << "";
-	}
+	
 	df->seleccionar(cols);
 	
 }

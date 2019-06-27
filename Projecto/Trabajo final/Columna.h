@@ -63,12 +63,6 @@ public:
 				}
 			}
 		}
-		for (auto vf : vfila) {
-			cout << vf <<" " ;
-		}
-		
-		//data = datatmp;
-		
 		return vfila;
 	}
 	void quicksort(vector<string>& names, string min, string max) {

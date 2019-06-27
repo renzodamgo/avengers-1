@@ -6,6 +6,7 @@
 using namespace std;
 
 void menu() {
+	system("cls");
 	cout << "(1) Importar Datos" << endl
 		<< "(2) Indexado por Columnas" << endl
 		<< "(3) Exportar Datos" << endl
@@ -79,12 +80,14 @@ void Mostrar_DF(vector<Dataframe*>& dfs) {
 		--i;
 	} while (i < 0 || i >= dfs.size());
 	dfs[i]->mostrarTodo();
+	system("pause");
 }
 void Filtrar(Dataframe*& data) {
 	string nombre, palabra;	
 	char c;
 	char op;
 	int n;
+	system("cls");
 	cout << "[1] mayor:" << endl
 		<< "[2] menor: " << endl
 		<< "[3] igual a: " << endl
@@ -210,6 +213,7 @@ void Crear_DF(vector<Dataframe*>& dfs) {
 	string nombre;
 	char c;
 	do {
+		system("cls");
 		cout << "[0] Salir" << endl
 			<< "[1] Seleccionar" << endl
 			<< "[2] Filtrar" << endl

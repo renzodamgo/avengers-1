@@ -52,9 +52,7 @@ void Indexado_Por_Columnas(vector<Dataframe*>& dfs) {
 	cin >> name;
 	dfs[i]->index(name);
 }
-void recorrerArbol() {
-
-}
+//void recorrerArbol() {}
 void Mostrar_DF(vector<Dataframe*>& dfs) {
 	int i;
 	string name;

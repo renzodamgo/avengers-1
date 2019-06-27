@@ -7,9 +7,11 @@
 #include <vector>
 #include <cstring>
 #include "Columna.h"
+#include "AVL.h"
 using namespace std;
 class Dataframe {
 private:
+	map<string, AVLTree<Fila*,string>*> tree;
 	map<string, Columna*> colmap;
 	vector<Fila*> filas;
 	vector<string> colnames;
@@ -80,6 +82,17 @@ public:
 		
 	}
 
+	void index(string colname) {
+		AVLTree <Fila*, string >* t = new AVLTree<Fila*, string>([=](Fila* r) {return r->getData(colname); });
+		for (auto row : this->filas) {
+			t->Add(row);
+		}
+		tree[colname] = t;
+	}
+
+
+
+
 	//1
 	void Filtrar_Mayor(string nCol, string C) {
 		vector<string> temp;
@@ -119,7 +132,7 @@ public:
 		}
 		this->filas = filtemp;
 	}
-	 //4
+	//4
 	void Filtrar_Empieza(string nCol, char C) {
 		vector<Fila*> filtemp;
 		vector<string> temp;
@@ -146,6 +159,7 @@ public:
 		}
 		this->filas = filtemp;
 	}
+
 
 
 };

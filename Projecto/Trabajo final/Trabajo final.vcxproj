@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AVL.h" />
     <ClInclude Include="Columna.h" />
     <ClInclude Include="Dataframe.h" />
     <ClInclude Include="Fila.h" />

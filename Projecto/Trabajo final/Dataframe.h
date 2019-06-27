@@ -60,7 +60,9 @@ public:
 			cout << itr->first << '\t';
 		}
 	}
-	void mostrarcolumna(string nombreCol) { if (colmap[nombreCol] != nullptr)colmap[nombreCol]->showcol();
+	void mostrarcolumna(string nombreCol) { 
+		if (colmap[nombreCol] != nullptr)  
+			colmap[nombreCol]->showcol();
 	}
 	void guardarDataframe(string nombre) {
 		ofstream data;
@@ -78,6 +80,32 @@ public:
 		
 	}
 
+	//1
+	void Filtrar_Mayor(string nCol, string C) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getMayor(C, fil->getIdx()) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
+	//2
+	void Filtrar_Menor(string nCol, string C) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getMenor(C, fil->getIdx()) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
 	//3
 	void Filtrar_Igual(string nCol, string C) {
 		vector<string> temp;
@@ -118,7 +146,6 @@ public:
 		}
 		this->filas = filtemp;
 	}
-
 
 
 };

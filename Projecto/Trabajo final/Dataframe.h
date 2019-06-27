@@ -84,7 +84,7 @@ public:
 		vector<string> temp;
 
 		for (auto fil : filas) {
-			if (colmap[nCol]->fron(fil->getIdx(), C) == true)
+			if (colmap[nCol]->front(fil->getIdx(), C) == true)
 			{
 				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
 				filtemp.push_back(fil);

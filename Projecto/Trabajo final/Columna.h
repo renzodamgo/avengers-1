@@ -82,7 +82,7 @@ public:
 
 	}
 	*/
-	bool fron(int dx, char C){
+	bool front(int dx, char C){
 		if (data[dx].front() == C)
 			return true;
 		else

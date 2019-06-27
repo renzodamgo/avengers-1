@@ -84,7 +84,7 @@ public:
 	}
 
 	void InOrder(string colname) {
-		auto prt = [](string a) {cout << a << " "; };
+		auto prt = [](Fila* a) {cout << a->getIdx() << endl; };
 		tree[colname]->InOrder(prt);
 		
 	}

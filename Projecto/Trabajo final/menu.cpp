@@ -86,6 +86,7 @@ void Indexado_Por_Columnas(vector<Dataframe*>& dfs) {
 	cout << "Nombre de columna a indexar: ";
 	cin >> name;
 	dfs[i]->index(name);
+	dfs[i]->InOrder(name);
 }
 //void recorrerArbol() {}
 void Mostrar_DF(vector<Dataframe*>& dfs) {

@@ -85,9 +85,9 @@ class AVLTree
 	}
 	void InOrder(Node* node, function<void(T)> in_order) {
 		if (node != nullptr) {
-			InOrder(node->left, in_order);
-			in_order(node->elem);
-			InOrder(node->right, in_order);
+			InOrder(node->l, in_order);
+			in_order(node->e);
+			InOrder(node->r, in_order);
 		}
 	}
 public:

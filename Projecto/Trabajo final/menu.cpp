@@ -112,14 +112,16 @@ void filtrar(Dataframe*& data) {
 		break;
 	case '4':
 		cout << "Elegir columna" << endl;
-		cin >> nombre;
+		cin.get();
+		getline(cin, nombre);
 		cout << "Elegir el caracter" << endl;
 		cin >> c;
 		data->Filtrar_Empieza(nombre, c);
 		break;
 	case '5':
 		cout << "Elegir columna" << endl;
-		cin >> nombre;
+		cin.get();
+		getline(cin, nombre);		
 		cout << "Elegir el caracter" << endl;
 		cin >> c;
 		data->Filtrar_Termino(nombre, c);

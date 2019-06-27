@@ -98,6 +98,13 @@ public:
 
 	}
 
+	bool same_string(string str, int dx) {
+		if (data[dx] == str)
+			return true;
+		else
+			return false;
+	}
+
 
 
 };

@@ -84,7 +84,7 @@ Dataframe* seleccionar(Dataframe* df) {
 }
 
 void filtrar(Dataframe*& data) {
-	string nombre;
+	string nombre, palabra;	
 	char c;
 	char op;
 	cout << "[1] mayor:" << endl
@@ -108,7 +108,12 @@ void filtrar(Dataframe*& data) {
 
 		break;
 	case '3':
-		//nuevo = ordenar(dfs[i]);
+		cout << "Elegir columna: " << endl;
+		cin.get();
+		getline(cin, nombre);
+		cout << "Elegir el palabra: " << endl;
+		cin >> palabra;
+		data->Filtrar_Igual(nombre, palabra);		
 		break;
 	case '4':
 		cout << "Elegir columna" << endl;

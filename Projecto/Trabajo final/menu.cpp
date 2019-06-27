@@ -27,7 +27,6 @@ void Importar_Datos(vector<Dataframe*>& dfs) {
 	Dataframe* dat = new Dataframe();
 	dat->cargarArchivo(name, ncol);
 	dfs.push_back(dat);
-	//dfs[0]->mostrarcolumnas();
 }
 
 void Exportar_Datos(vector<Dataframe*>& dfs) {
@@ -41,8 +40,6 @@ void Exportar_Datos(vector<Dataframe*>& dfs) {
 	cout << "Nombre del archivo: ";
 	cin >> name;
 	dfs[i]->guardarDataframe(name);
-
-	// TODO Guardar Dataframe en archivo
 }
 void MostrarDataframe(vector<Dataframe*>& dfs) {
 	int i;
@@ -96,46 +93,37 @@ void filtrar(Dataframe*& data) {
 		<< "[7] no incluido en: " << endl;
 	
 	cin >> op;
-	
+	cout << "Elegir columna" << endl;
+	cin.get();
+	getline(cin, nombre);
 	
 	switch (op) {
 	case '1':
-		//nuevo.seleccionar(dfs[i]);
+		//Mayor a
 		break;
 	case '2':
-
-		//aea
-
+		//Menor a
 		break;
 	case '3':
-		cout << "Elegir columna: " << endl;
-		cin.get();
-		getline(cin, nombre);
 		cout << "Elegir el palabra: " << endl;
 		cin >> palabra;
 		data->Filtrar_Igual(nombre, palabra);		
 		break;
 	case '4':
-		cout << "Elegir columna" << endl;
-		cin.get();
-		getline(cin, nombre);
 		cout << "Elegir el caracter" << endl;
 		cin >> c;
 		data->Filtrar_Empieza(nombre, c);
 		break;
-	case '5':
-		cout << "Elegir columna" << endl;
-		cin.get();
-		getline(cin, nombre);		
+	case '5':		
 		cout << "Elegir el caracter" << endl;
 		cin >> c;
 		data->Filtrar_Termino(nombre, c);
 		break;
 	case '6':
-		//nuevo = ordenar(dfs[i]);
+		//incluido
 		break;
 	case '7':
-		//nuevo = ordenar(dfs[i]);
+		//noincluido
 		break;
 	}
 	

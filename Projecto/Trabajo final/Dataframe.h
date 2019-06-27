@@ -8,6 +8,7 @@
 #include <cstring>
 #include "Columna.h"
 #include "AVL.h"
+
 using namespace std;
 class Dataframe {
 private:
@@ -82,6 +83,11 @@ public:
 		
 	}
 
+	void InOrder(string colname) {
+		auto prt = [](string a) {cout << a << " "; };
+		tree[colname]->InOrder(prt);
+		
+	}
 	void index(string colname) {
 		AVLTree <Fila*, string >* t = new AVLTree<Fila*, string>([=](Fila* r) {return colmap[colname]->getData(r->getIdx());
 	});

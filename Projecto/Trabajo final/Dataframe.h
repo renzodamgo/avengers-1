@@ -113,9 +113,6 @@ public:
 		
 	};
 
-
-
-	//1
 	void Filtrar_Mayor(string nCol, string C) {
 		vector<string> temp;
 		vector<Fila*> filtemp;
@@ -128,7 +125,6 @@ public:
 		}
 		this->filas = filtemp;
 	}
-	//2
 	void Filtrar_Menor(string nCol, string C) {
 		vector<string> temp;
 		vector<Fila*> filtemp;
@@ -141,7 +137,6 @@ public:
 		}
 		this->filas = filtemp;
 	}
-	//3
 	void Filtrar_Igual(string nCol, string C) {
 		vector<string> temp;
 		vector<Fila*> filtemp;
@@ -154,7 +149,6 @@ public:
 		}
 		this->filas = filtemp;
 	}
-	//4
 	void Filtrar_Empieza(string nCol, char C) {
 		vector<Fila*> filtemp;
 		vector<string> temp;
@@ -168,7 +162,6 @@ public:
 		}
 		this->filas = filtemp;
 	}
-	//5
 	void Filtrar_Termino(string nCol, char C) {
 		vector<string> temp;
 		vector<Fila*> filtemp;
@@ -181,7 +174,4 @@ public:
 		}
 		this->filas = filtemp;
 	}
-
-
-
 };

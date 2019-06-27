@@ -7,14 +7,14 @@ using namespace std;
 
 void menu() {
 	cout << "(1) Importar Datos" << endl
-		<< "(2) Indexado por Columnas" << endl
-		<< "(3) Seleccion por columnas" << endl
-		<< "(4) Exportar Datos" << endl
-		<< "(5) Crear DataFrame" << endl
-		<< "(6) Mostrar DataFrame" << endl
+		<< "(2) Indexado por Columnas" << endl		
+		<< "(3) Exportar Datos" << endl
+		<< "(4) Crear DataFrame" << endl
+		<< "(5) Mostrar DataFrame" << endl
 		<< "(0) Salir" << endl
 		<< "Elige una opcion: " ;
 }
+
 void Importar_Datos(vector<Dataframe*>& dfs) {
 	string name;
 	int ncol;
@@ -26,6 +26,7 @@ void Importar_Datos(vector<Dataframe*>& dfs) {
 	dat->cargarArchivo(name, ncol);
 	dfs.push_back(dat);	
 }
+
 void Seleccionar(Dataframe*& df) {
 	int i;
 	string col;
@@ -45,23 +46,6 @@ void Seleccionar(Dataframe*& df) {
 	df->seleccionar(cols);
 	
 }
-/*
-DF* seleccionar(DF* df) {
-	vector<string> cols;
-	string col;
-	do {
-		cout << "Ingrese columna: ";
-		cin.get();
-		getline(cin, col);
-		if (col != "") {
-			cols.push_back(col);
-		}
-	} while (col != "");
-	if (cols.size() > 0) {
-		return df.seleccionar(cols);
-	}
-	return nullptr;
-}*/
 void Exportar_Datos(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
@@ -74,7 +58,6 @@ void Exportar_Datos(vector<Dataframe*>& dfs) {
 	cin >> name;
 	dfs[i]->guardarDataframe(name);
 }
-
 void Indexado_Por_Columnas(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
@@ -88,7 +71,6 @@ void Indexado_Por_Columnas(vector<Dataframe*>& dfs) {
 	dfs[i]->index(name);
 	dfs[i]->InOrder(name);
 }
-//void recorrerArbol() {}
 void Mostrar_DF(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
@@ -99,19 +81,7 @@ void Mostrar_DF(vector<Dataframe*>& dfs) {
 	} while (i < 0 || i >= dfs.size());
 	dfs[i]->mostrarTodo();
 }
-
-/*
-void listarDFs(vector<DF*>& dfs) {
-	int i = 0;
-	for (auto df : dfs) {
-		cout << ++i << "]" << endl; // Todo imprimir alguna otra inf del DF
-	}
-}
-*/
-
-
-
-void filtrar(Dataframe*& data) {
+void Filtrar(Dataframe*& data) {
 	string nombre, palabra;	
 	char c;
 	char op;
@@ -162,13 +132,14 @@ void filtrar(Dataframe*& data) {
 		break;
 	}
 }
-//DF* ordenar(DF* df) { return nullptr; }
+void ordenar(Dataframe *& data) { 
 
+}
 void Crear_DF(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
 	do {
-		cout << "Seleecione un DF [del 1 al " << dfs.size() << "]: ";
+		cout << "Seleccione un DF [del 1 al " << dfs.size() << "]: ";
 		cin >> i;
 		--i;
 	} while (i < 0 || i >= dfs.size());
@@ -183,24 +154,23 @@ void Crear_DF(vector<Dataframe*>& dfs) {
 			<< "[0] Salir" << endl
 			<< "Ingrese una opcion [0...3]: ";
 		cin >> op;
-		
+
 		Dataframe* nuevo = dfs[i];
 		switch (op) {
 		case '1':
 			Seleccionar(nuevo);
 			break;
-		case '2':			
-			filtrar(nuevo);			
+		case '2':
+			Filtrar(nuevo);
 			break;
 		case '3':
 			//nuevo = ordenar(dfs[i]);
 			break;
 		}
-		if (nuevo != nullptr) 
+		if (nuevo != nullptr)
 			if (op != '0') dfs.push_back(nuevo);
 	} while (op != '0');
 }
-
 
 int main() {
 	char op;
@@ -216,15 +186,12 @@ int main() {
 			Indexado_Por_Columnas(dfs);
 			break;
 		case '3':
-			//Seleccion_Por_Columnas(dfs);
-			break;
-		case '4':
 			Exportar_Datos(dfs);
 			break;
-		case '5':
+		case '4':
 			Crear_DF(dfs);
 			break;
-		case '6':
+		case '5':
 			Mostrar_DF(dfs);
 			break;
 		}

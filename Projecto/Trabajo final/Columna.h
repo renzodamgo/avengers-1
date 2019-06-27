@@ -14,15 +14,13 @@ private:
 	vector<string> data;
 	int filas;
 	map<string, int> dat;
-	//vector<string> temp;
 
 public:
-	Columna(bool numero = false, int filas = 0) : numero(numero),filas(filas) {};
+	Columna(bool numero = false, int filas = 0) : numero(numero), filas(filas) {};
 	~Columna() {};
+
 	void inputData(string datadelCSV) {
-		data.push_back(datadelCSV);
-		filas++;
-		//dat.insert(pair<string, int>(datadelCSV, 1));
+		data.push_back(datadelCSV);			
 	}
 	void showcol() {
 		for (auto dat : data) {
@@ -35,6 +33,7 @@ public:
 
 	/*
 	void quicksort(vector<string>& names, string min, string max) {
+		vector<string> temp;
 		int temp = 0, i = 0;
 		string lowMin = max,
 			lowMax = min,
@@ -88,8 +87,6 @@ public:
 		else
 			return false;
 	}
-
-
 	bool back(int dx, char C) {
 		if (data[dx].back() == C)
 			return true;
@@ -97,26 +94,22 @@ public:
 			return false;
 
 	}
-
 	bool same_string(string str, int dx) {
 		if (data[dx] == str)
 			return true;
 		else
 			return false;
 	}
-
 	bool getMayor(string str, int dx) {
 		if (data[dx].compare(str)> 0)
 			return true;
 		else
 			return false;
 	}
-
 	bool getMenor(string str, int dx) {
 		if (data[dx].compare(str) < 0)
 			return true;
 		else
 			return false;
 	}
-
 };

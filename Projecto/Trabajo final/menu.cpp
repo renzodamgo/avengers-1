@@ -96,46 +96,40 @@ void filtrar(Dataframe*& data) {
 		<< "[7] no incluido en: " << endl;
 	
 	cin >> op;
-	
-	
+	cout << "Elegir columna" << endl;
+	cin.get();
+	getline(cin, nombre);	
 	switch (op) {
+
 	case '1':
-		//nuevo.seleccionar(dfs[i]);
+		cout << "Elegir palabra: " << endl;
+		cin >> palabra;
+		data->Filtrar_Mayor(nombre, palabra);
 		break;
 	case '2':
-
-		//aea
-
-		break;
-	case '3':
-		cout << "Elegir columna: " << endl;
-		cin.get();
-		getline(cin, nombre);
-		cout << "Elegir el palabra: " << endl;
+		cout << "Elegir palabra" << endl;
+		cin >> palabra;
+		data->Filtrar_Menor(nombre, palabra);
+	case '3':		
+		cout << "Elegir palabra: " << endl;
 		cin >> palabra;
 		data->Filtrar_Igual(nombre, palabra);		
 		break;
-	case '4':
-		cout << "Elegir columna" << endl;
-		cin.get();
-		getline(cin, nombre);
+	case '4':		
 		cout << "Elegir el caracter" << endl;
 		cin >> c;
 		data->Filtrar_Empieza(nombre, c);
 		break;
-	case '5':
-		cout << "Elegir columna" << endl;
-		cin.get();
-		getline(cin, nombre);		
+	case '5':		
 		cout << "Elegir el caracter" << endl;
 		cin >> c;
 		data->Filtrar_Termino(nombre, c);
 		break;
 	case '6':
-		//nuevo = ordenar(dfs[i]);
+		
 		break;
 	case '7':
-		//nuevo = ordenar(dfs[i]);
+		
 		break;
 	}
 	

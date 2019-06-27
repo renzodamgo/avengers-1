@@ -105,6 +105,18 @@ public:
 			return false;
 	}
 
+	bool getMayor(string str, int dx) {
+		if (data[dx].compare(str)> 0)
+			return true;
+		else
+			return false;
+	}
 
+	bool getMenor(string str, int dx) {
+		if (data[dx].compare(str) < 0)
+			return true;
+		else
+			return false;
+	}
 
 };

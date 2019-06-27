@@ -39,6 +39,22 @@ void Exportar_Datos(vector<Dataframe*>& dfs) {
 	cin >> name;
 	dfs[i]->guardarDataframe(name);
 }
+
+void Indexado_Por_Columnas(vector<Dataframe*>& dfs) {
+	int i;
+	string name;
+	do {
+		cout << "Seleccionar un DF [del 1 al " << dfs.size() << "]: ";
+		cin >> i;
+		--i;
+	} while (i < 0 || i >= dfs.size());
+	cout << "Nombre de columna a indexar: ";
+	cin >> name;
+	dfs[i]->index(name);
+}
+void recorrerArbol() {
+
+}
 void Mostrar_DF(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
@@ -179,7 +195,7 @@ int main() {
 			Importar_Datos(dfs);
 			break;
 		case '2':
-			//Indexado_Por_Columnas(dfs);
+			Indexado_Por_Columnas(dfs);
 			break;
 		case '3':
 			//Seleccion_Por_Columnas(dfs);

@@ -1,4 +1,4 @@
-Header.h
+
 
 #pragma once
 
@@ -123,7 +123,7 @@ public:
 	};
 };
 
- {
+ int main(){
 	int n;
 	float e;
 	Tree* t = new Tree();

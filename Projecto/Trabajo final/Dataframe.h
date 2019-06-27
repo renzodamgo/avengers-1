@@ -83,7 +83,8 @@ public:
 	}
 
 	void index(string colname) {
-		AVLTree <Fila*, string >* t = new AVLTree<Fila*, string>([=](Fila* r) {return r->getData(colname); });
+		AVLTree <Fila*, string >* t = new AVLTree<Fila*, string>([=](Fila* r) {return colmap[colname]->getData(r->getIdx());
+	});
 		for (auto row : this->filas) {
 			t->Add(row);
 		}

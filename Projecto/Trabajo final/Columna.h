@@ -116,4 +116,16 @@ public:
 		else
 			return false;
 	}
+	bool getIn(string str, int dx) {
+		if (data[dx].find(str) != string::npos)
+			return true;
+		else
+			return false;
+	}
+	bool getnoIn(string str, int dx) {
+		if (data[dx].find(str) != string::npos)
+			return false;
+		else
+			return true;
+	}
 };

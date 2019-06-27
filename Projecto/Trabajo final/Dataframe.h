@@ -21,6 +21,18 @@ private:
 public:
 	Dataframe() {};
 	~Dataframe() {};
+	vector<Fila*> getFilas() {
+		return filas;
+	};
+	map<string, Columna*> getColmap() {
+		return colmap;
+	};
+
+
+	void copy(map<string, Columna*> col, vector<Fila*> fil) {
+		colmap = col;
+		filas = fil;
+	}
 	void cargarArchivo(string nombre, int ncol) {
 		this->ncol = ncol;
 		ifstream data;
@@ -172,6 +184,30 @@ public:
 		vector<Fila*> filtemp;
 		for (auto fil : filas) {
 			if (colmap[nCol]->back(fil->getIdx(), C) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
+	void Filtrar_In(string nCol, string C) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getIn(C, fil->getIdx()) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
+	void Filtrar_NoIn(string nCol, string C) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getnoIn(C, fil->getIdx()) == true)
 			{
 				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
 				filtemp.push_back(fil);

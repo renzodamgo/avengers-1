@@ -126,10 +126,14 @@ void Filtrar(Dataframe*& data) {
 		data->Filtrar_Termino(nombre, c);
 		break;
 	case '6':
-		
+		cout << "Elegir palabra: ";
+		cin >> palabra;
+		data->Filtrar_In(nombre,palabra);
 		break;
 	case '7':
-		
+		cout << "Elegir palabra: ";
+		cin >> palabra;
+		data->Filtrar_NoIn(nombre,palabra);
 		break;
 	}
 }
@@ -160,23 +164,20 @@ void Crear_DF(vector<Dataframe*>& dfs) {
 	string nombre;
 	char c;
 	do {
-		cout << "[1] Seleccionar" << endl
+		cout << "[0] Salir" << endl
+			<< "[1] Seleccionar" << endl
 			<< "[2] Filtrar" << endl
-			<< "[3] Ordenar" << endl
-			<< "[0] Salir" << endl
-			<< "Ingrese una opcion [0...3]: ";
+			<< "Ingrese una opcion [0...2]: ";
 		cin >> op;
 
-		Dataframe* nuevo = dfs[i];
+		Dataframe* nuevo = new Dataframe();
+		nuevo->copy(dfs[i]->getColmap(),dfs[i]->getFilas() );
 		switch (op) {
 		case '1':
 			Seleccionar(nuevo);
 			break;
 		case '2':
 			Filtrar(nuevo);
-			break;
-		case '3':
-			//nuevo = ordenar(dfs[i]);
 			break;
 		}
 		if (nuevo != nullptr)

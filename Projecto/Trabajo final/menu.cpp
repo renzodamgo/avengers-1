@@ -26,7 +26,42 @@ void Importar_Datos(vector<Dataframe*>& dfs) {
 	dat->cargarArchivo(name, ncol);
 	dfs.push_back(dat);	
 }
-
+void Seleccionar(Dataframe*& df) {
+	int i;
+	string col;
+	vector<string>cols;
+	int n;
+	
+	cout << "Cuantas columna desea seleccionar: ";
+	cin >> n;
+	for (int j = 0; j < n; j++) {
+		cout << "Ingrese columna: ";
+		cin >> col;
+		cols.push_back(col);
+	}
+	for (auto c : cols) {
+		cout << c << "";
+	}
+	df->seleccionar(cols);
+	
+}
+/*
+DF* seleccionar(DF* df) {
+	vector<string> cols;
+	string col;
+	do {
+		cout << "Ingrese columna: ";
+		cin.get();
+		getline(cin, col);
+		if (col != "") {
+			cols.push_back(col);
+		}
+	} while (col != "");
+	if (cols.size() > 0) {
+		return df.seleccionar(cols);
+	}
+	return nullptr;
+}*/
 void Exportar_Datos(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
@@ -73,23 +108,7 @@ void listarDFs(vector<DF*>& dfs) {
 }
 */
 
-Dataframe* seleccionar(Dataframe* df) {
-	vector<string> cols;
-	string col;
-	do {
-		cout << "Ingrese columna: ";
-		cin.get();
-		getline(cin, col);
-		if (col != "") {
-			cols.push_back(col);
-		}
-	} while (col != "");
-	if (cols.size() > 0) {
-	//q	df->seleccionar(cols);
-		return df;
-	}
-	return nullptr;
-}
+
 
 void filtrar(Dataframe*& data) {
 	string nombre, palabra;	
@@ -167,7 +186,7 @@ void Crear_DF(vector<Dataframe*>& dfs) {
 		Dataframe* nuevo = dfs[i];
 		switch (op) {
 		case '1':
-			//nuevo.seleccionar(dfs[i]);
+			Seleccionar(nuevo);
 			break;
 		case '2':			
 			filtrar(nuevo);			

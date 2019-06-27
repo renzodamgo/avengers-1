@@ -90,7 +90,19 @@ public:
 		}
 		tree[colname] = t;
 	}
-
+	void seleccionar(vector<string> coln) {
+		map<string, Columna*> colmaptemp;
+		for (auto col : colmap) {
+			for (auto colname : coln) {
+				if (col.first == colname) {
+					colmaptemp.insert(pair<string, Columna*>(col.first, col.second));
+				}
+			}
+			
+		}
+		colmap = colmaptemp;
+		
+	};
 
 
 

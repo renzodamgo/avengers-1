@@ -19,7 +19,27 @@ private:
 public:
 	Columna(bool numero = false, int filas = 0) : numero(numero), filas(filas) {};
 	~Columna() {};
+	bool isNumber(string s)
+	{
+		for (int i = 0; i < s.length(); i++)
+			if (isdigit(s[i]) == false)
+				return false;
 
+		return true;
+	}
+	bool getNum() {
+		return numero;
+	}
+
+	void isNum() {
+		if (isNumber(data[0])) {
+			numero = true;
+		}
+		else {
+			numero = false;
+		};
+
+	}
 	void inputData(string datadelCSV) {
 		data.push_back(datadelCSV);			
 	}
@@ -142,5 +162,23 @@ public:
 			return false;
 		else
 			return true;
+	}
+	bool getIgualnum(int str, int dx) {
+		if (stoi(data[dx]) == str)
+			return true;
+		else
+			return false;
+	}
+	bool getMayornum(int str, int dx) {
+		if (stoi(data[dx]) > str)
+			return true;
+		else
+			return false;
+	}
+	bool getMenornum(int str, int dx) {
+		if (stoi(data[dx]) < str) 
+			return true;
+		else
+			return false;
 	}
 };

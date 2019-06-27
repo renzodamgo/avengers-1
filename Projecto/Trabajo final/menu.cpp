@@ -84,6 +84,7 @@ void Filtrar(Dataframe*& data) {
 	string nombre, palabra;	
 	char c;
 	char op;
+	int n;
 	cout << "[1] mayor:" << endl
 		<< "[2] menor: " << endl
 		<< "[3] igual a: " << endl
@@ -96,44 +97,91 @@ void Filtrar(Dataframe*& data) {
 	cin >> op;
 	cout << "Elegir columna: ";
 	cin.get();
-	getline(cin, nombre);	
-	switch (op) {
+	getline(cin, nombre);
+	if (data->colesnum(nombre)) {
 
-	case '1':
-		cout << "Elegir palabra: ";
-		cin >> palabra;
-		data->Filtrar_Mayor(nombre, palabra);
-		break;
-	case '2':
-		cout << "Elegir palabra: ";
-		cin >> palabra;
-		data->Filtrar_Menor(nombre, palabra);
-	case '3':		
-		cout << "Elegir palabra: ";
-		cin >> palabra;
-		data->Filtrar_Igual(nombre, palabra);		
-		break;
-	case '4':		
-		cout << "Elegir el caracter: ";
-		cin >> c;
-		data->Filtrar_Empieza(nombre, c);
-		break;
-	case '5':		
-		cout << "Elegir el caracter: ";
-		cin >> c;
-		data->Filtrar_Termino(nombre, c);
-		break;
-	case '6':
-		cout << "Elegir palabra: ";
-		cin >> palabra;
-		data->Filtrar_In(nombre,palabra);
-		break;
-	case '7':
-		cout << "Elegir palabra: ";
-		cin >> palabra;
-		data->Filtrar_NoIn(nombre,palabra);
-		break;
+		switch (op) {
+
+		case '1':
+			cout << "Elegir numero: ";
+			cin >> n;
+			data->Filtrar_Mayor_num(nombre, n);
+			break;
+		case '2':
+			cout << "Elegir numero: ";
+			cin >> n;
+			data->Filtrar_Menor_num(nombre, n);
+		case '3':
+			cout << "Elegir numero: ";
+			cin >> n;
+			data->Filtrar_Igual_num(nombre, n);
+			break;
+		case '4':
+			cout << "Elegir el numeros: ";
+			cin >> c;
+			data->Filtrar_Empieza(nombre, c);
+			break;
+		case '5':
+			cout << "Elegir el numero: ";
+			cin >> c;
+			data->Filtrar_Termino(nombre, c);
+			break;
+		case '6':
+			cout << "Elegir numero: ";
+			cin >> palabra;
+			data->Filtrar_In(nombre, palabra);
+			break;
+		case '7':
+			cout << "Elegir numero: ";
+			cin >> palabra;
+			data->Filtrar_NoIn(nombre, palabra);
+			break;
+		}
+
 	}
+	else {
+
+		switch (op) {
+
+		case '1':
+			cout << "Elegir palabra: ";
+			cin >> palabra;
+			data->Filtrar_Mayor(nombre, palabra);
+			break;
+		case '2':
+			cout << "Elegir palabra: ";
+			cin >> palabra;
+			data->Filtrar_Menor(nombre, palabra);
+		case '3':
+			cout << "Elegir palabra: ";
+			cin >> palabra;
+			data->Filtrar_Igual(nombre, palabra);
+			break;
+		case '4':
+			cout << "Elegir el caracter: ";
+			cin >> c;
+			data->Filtrar_Empieza(nombre, c);
+			break;
+		case '5':
+			cout << "Elegir el caracter: ";
+			cin >> c;
+			data->Filtrar_Termino(nombre, c);
+			break;
+		case '6':
+			cout << "Elegir palabra: ";
+			cin >> palabra;
+			data->Filtrar_In(nombre, palabra);
+			break;
+		case '7':
+			cout << "Elegir palabra: ";
+			cin >> palabra;
+			data->Filtrar_NoIn(nombre, palabra);
+			break;
+		}
+
+
+	}
+	
 }
 
 void Ordenar_DF(vector <Dataframe *>& dfs) { 

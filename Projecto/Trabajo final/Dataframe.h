@@ -21,6 +21,13 @@ private:
 public:
 	Dataframe() {};
 	~Dataframe() {};
+	bool colesnum(string colname)
+	{
+		colmap[colname]->isNum();
+		return colmap[colname]->getNum();
+	}
+
+
 	vector<Fila*> getFilas() {
 		return filas;
 	};
@@ -135,7 +142,42 @@ public:
 		};
 	}
 	
-
+	void Filtrar_Mayor_num(string nCol, int n) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getMayornum(n, fil->getIdx()) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
+	void Filtrar_Menor_num(string nCol, int C) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getMenornum(C, fil->getIdx()) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
+	void Filtrar_Igual_num(string nCol, int C) {
+		vector<string> temp;
+		vector<Fila*> filtemp;
+		for (auto fil : filas) {
+			if (colmap[nCol]->getIgualnum(C, fil->getIdx()) == true)
+			{
+				temp.push_back(colmap[nCol]->getData(fil->getIdx()));
+				filtemp.push_back(fil);
+			}
+		}
+		this->filas = filtemp;
+	}
 	void Filtrar_Mayor(string nCol, string C) {
 		vector<string> temp;
 		vector<Fila*> filtemp;

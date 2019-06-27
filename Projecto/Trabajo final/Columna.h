@@ -15,6 +15,7 @@ private:
 	int filas;
 	map<string, int> dat;
 
+
 public:
 	Columna(bool numero = false, int filas = 0) : numero(numero), filas(filas) {};
 	~Columna() {};
@@ -31,9 +32,12 @@ public:
 		return data[idx];
 	}
 
-	/*
+	void Ordenar()
+	{
+		quicksort(data, data[0], data[data.size() - 1]);
+	}
 	void quicksort(vector<string>& names, string min, string max) {
-		vector<string> temp;
+		vector<string> tempData;
 		int temp = 0, i = 0;
 		string lowMin = max,
 			lowMax = min,
@@ -80,7 +84,7 @@ public:
 		}
 
 	}
-	*/
+
 	bool front(int dx, char C){
 		if (data[dx].front() == C)
 			return true;

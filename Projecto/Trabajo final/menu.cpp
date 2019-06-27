@@ -7,10 +7,11 @@ using namespace std;
 
 void menu() {
 	cout << "(1) Importar Datos" << endl
-		<< "(2) Indexado por Columnas" << endl		
+		<< "(2) Indexado por Columnas" << endl
 		<< "(3) Exportar Datos" << endl
 		<< "(4) Crear DataFrame" << endl
 		<< "(5) Mostrar DataFrame" << endl
+		<< "(6) Ordenamiento por Columnas" << endl
 		<< "(0) Salir" << endl
 		<< "Elige una opcion: " ;
 }
@@ -132,9 +133,20 @@ void Filtrar(Dataframe*& data) {
 		break;
 	}
 }
-void ordenar(Dataframe *& data) { 
 
+void Ordenar_DF(vector <Dataframe *>& dfs) { 
+	int i;
+	string name;
+	do {
+		cout << "Seleccionar un DF [del 1 al " << dfs.size() << "]: ";
+		cin >> i;
+		--i;
+	} while (i < 0 || i >= dfs.size());
+	cout << "Nombre de columna a ordenar: ";
+	cin >> name;
+	dfs[i]->Ordenar(name);
 }
+
 void Crear_DF(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
@@ -193,6 +205,9 @@ int main() {
 			break;
 		case '5':
 			Mostrar_DF(dfs);
+			break;
+		case '6':
+			Ordenar_DF(dfs);
 			break;
 		}
 	} while (op != '0');

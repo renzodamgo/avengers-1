@@ -113,6 +113,11 @@ public:
 		
 	};
 
+	void Ordenar(string colname) {
+		colmap[colname]->Ordenar();
+	}
+
+
 	void Filtrar_Mayor(string nCol, string C) {
 		vector<string> temp;
 		vector<Fila*> filtemp;

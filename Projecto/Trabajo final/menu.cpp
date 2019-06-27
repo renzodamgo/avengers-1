@@ -81,11 +81,11 @@ Dataframe* seleccionar(Dataframe* df) {
 	}
 	return nullptr;
 }
-/*
-DF* filtrar(DF* df) { return nullptr; }
-DF* ordenar(DF* df) { return nullptr; }
 
-void crearDF(vector<DF*>& dfs) {
+//Dataframe filtrar(Dataframe* df) {  }
+//DF* ordenar(DF* df) { return nullptr; }
+
+void crearDF(vector<Dataframe*>& dfs) {
 	int i;
 	string name;
 	do {
@@ -95,6 +95,8 @@ void crearDF(vector<DF*>& dfs) {
 	} while (i < 0 || i >= dfs.size());
 
 	char op;
+	string nombre;
+	char c;
 	do {
 		cout << "[1] Seleccionar" << endl
 			<< "[2] Filtrar" << endl
@@ -102,16 +104,20 @@ void crearDF(vector<DF*>& dfs) {
 			<< "[4] Cancelar" << endl
 			<< "[0] Ingrese una opcion [0...3]" << endl;
 		cin >> op;
-		DF* nuevo;
+		if (op == 0) break;
+		Dataframe* nuevo = dfs[i];
 		switch (op) {
 		case '1':
-			nuevo = seleccionar(dfs[i]);
+			//nuevo.seleccionar(dfs[i]);
 			break;
 		case '2':
-			nuevo = filtrar(dfs[i]);
+			
+			cin >> nombre;
+			cin >> c;
+			nuevo->Filtrar_Empieza(nombre,c);
 			break;
 		case '3':
-			nuevo = ordenar(dfs[i]);
+			//nuevo = ordenar(dfs[i]);
 			break;
 		}
 		if (nuevo != nullptr) {
@@ -120,8 +126,7 @@ void crearDF(vector<DF*>& dfs) {
 	} while (op != '0');
 }
 
-void mostrarDF(vector<DF*>& dfs) {}
-*/
+
 int main() {
 	char op;
 	vector<Dataframe*> dfs;
@@ -142,7 +147,7 @@ int main() {
 			Exportar_Datos(dfs);
 			break;
 		case '5':
-			Exportar_Datos(dfs);
+			crearDF(dfs);
 			break;
 		case '6':
 			MostrarDataframe(dfs);

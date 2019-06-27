@@ -33,7 +33,7 @@ public:
 		return data[idx];
 	}
 
-	
+	/*
 	void quicksort(vector<string>& names, string min, string max) {
 		int temp = 0, i = 0;
 		string lowMin = max,
@@ -81,9 +81,9 @@ public:
 		}
 
 	}
-	
+	*/
 	bool fron(int dx, char C){
-		if (data[dx].front == C)
+		if (data[dx].front() == C)
 			return true;
 		else
 			return false;
@@ -91,7 +91,7 @@ public:
 
 
 	bool back(int dx, char C) {
-		if (data[dx].back == C)
+		if (data[dx].back() == C)
 			return true;
 		else
 			return false;

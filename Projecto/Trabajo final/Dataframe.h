@@ -126,9 +126,15 @@ public:
 	};
 
 	void Ordenar(string colname) {
-		colmap[colname]->Ordenar();
-	}
+		vector<int> filastmp;
+		filastmp = colmap[colname]->Ordenar();
+		
+		for (int j = 0; j < filas.size() ; j++) {
+			filas[j]->setIdx(filastmp[j]);
 
+		};
+	}
+	
 
 	void Filtrar_Mayor(string nCol, string C) {
 		vector<string> temp;

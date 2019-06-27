@@ -14,7 +14,7 @@ private:
 	vector<string> data;
 	int filas;
 	map<string, int> dat;
-
+	vector<int> vfila;
 
 public:
 	Columna(bool numero = false, int filas = 0) : numero(numero), filas(filas) {};
@@ -32,9 +32,24 @@ public:
 		return data[idx];
 	}
 
-	void Ordenar()
-	{
-		quicksort(data, data[0], data[data.size() - 1]);
+	vector<int> Ordenar()
+	{	
+		vector<string> datatmp = data;
+		quicksort(datatmp, datatmp[0], datatmp[datatmp.size() - 1]);
+		for (int i=0; i < datatmp.size() ; i++) {
+			for (int j=0; j < data.size() ; j++) {
+				if (datatmp[i] == data[j]) {
+					vfila.push_back(j);
+				}
+			}
+		}
+		for (auto vf : vfila) {
+			cout << vf <<" " ;
+		}
+		
+		//data = datatmp;
+		
+		return vfila;
 	}
 	void quicksort(vector<string>& names, string min, string max) {
 		vector<string> tempData;

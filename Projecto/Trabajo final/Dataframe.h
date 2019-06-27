@@ -84,8 +84,11 @@ public:
 	}
 
 	void InOrder(string colname) {
-		auto prt = [](Fila* a) {cout << a->getIdx() << endl; };
+		vector<Fila*> filastemp;
+		auto prt = [&](Fila* a) {filastemp.push_back(new Fila(a->getIdx())); };
+	
 		tree[colname]->InOrder(prt);
+		filas = filastemp;
 		
 	}
 	void index(string colname) {

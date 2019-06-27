@@ -3,9 +3,9 @@
 ## TRABAJO FINAL
 
 ### INTEGRANTES
-* Joaquín Aguirre
-* Bruno Tiglla Arrascue
-* Renzo Damián Gomez
+* Joaquín Aguirre 18
+* Bruno Tiglla Arrascue 18
+* Renzo Damián Gomez 18
 
 ### INTRODUCCIÓN
 

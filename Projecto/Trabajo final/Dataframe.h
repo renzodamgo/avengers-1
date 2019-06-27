@@ -17,7 +17,7 @@ private:
 
 public:
 	Dataframe() {};
-	~Dataframe();
+	~Dataframe() {};
 	void cargarArchivo(string nombre, int ncol) {
 		this->ncol = ncol;
 		ifstream data;
@@ -103,6 +103,7 @@ public:
 				filtemp.push_back(fil);
 			}
 		}
+		this->filas = filtemp;
 	}
 
 

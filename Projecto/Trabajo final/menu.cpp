@@ -14,7 +14,8 @@ void menu() {
 		<< "(4) Exportar Datos" << endl
 		<< "(5) Crear DataFrame" << endl
 		<< "(6) Mostrar DataFframe" << endl
-		<< "(0) Salir" << endl;
+		<< "(0) Salir" << endl
+		<< "Elige una opcion: " ;
 }
 void Importar_Datos(vector<Dataframe*>& dfs) {
 	string name;
@@ -26,7 +27,7 @@ void Importar_Datos(vector<Dataframe*>& dfs) {
 	Dataframe* dat = new Dataframe();
 	dat->cargarArchivo(name, ncol);
 	dfs.push_back(dat);
-	dfs[0]->mostrarcolumnas();
+	//dfs[0]->mostrarcolumnas();
 }
 
 void Exportar_Datos(vector<Dataframe*>& dfs) {
@@ -82,7 +83,57 @@ Dataframe* seleccionar(Dataframe* df) {
 	return nullptr;
 }
 
-//Dataframe filtrar(Dataframe* df) {  }
+void filtrar(Dataframe*& data) {
+	string nombre;
+	char c;
+	char op;
+	cout << "[1] mayor:" << endl
+		<< "[2] menor: " << endl
+		<< "[3] igual a: " << endl
+		<< "[4] inicia con: " << endl
+		<< "[5] finaliza con: " << endl
+		<< "[6] incluido en: " << endl
+		<< "[7] no incluido en: " << endl;
+	
+	cin >> op;
+	
+	
+	switch (op) {
+	case '1':
+		//nuevo.seleccionar(dfs[i]);
+		break;
+	case '2':
+
+		//aea
+
+		break;
+	case '3':
+		//nuevo = ordenar(dfs[i]);
+		break;
+	case '4':
+		cout << "Elegir columna" << endl;
+		cin >> nombre;
+		cout << "Elegir el caracter" << endl;
+		cin >> c;
+		data->Filtrar_Empieza(nombre, c);
+		break;
+	case '5':
+		cout << "Elegir columna" << endl;
+		cin >> nombre;
+		cout << "Elegir el caracter" << endl;
+		cin >> c;
+		data->Filtrar_Termino(nombre, c);
+		break;
+	case '6':
+		//nuevo = ordenar(dfs[i]);
+		break;
+	case '7':
+		//nuevo = ordenar(dfs[i]);
+		break;
+	}
+	
+	
+	}
 //DF* ordenar(DF* df) { return nullptr; }
 
 void crearDF(vector<Dataframe*>& dfs) {
@@ -101,10 +152,10 @@ void crearDF(vector<Dataframe*>& dfs) {
 		cout << "[1] Seleccionar" << endl
 			<< "[2] Filtrar" << endl
 			<< "[3] Ordenar" << endl
-			<< "[4] Cancelar" << endl
-			<< "[0] Ingrese una opcion [0...3]" << endl;
+			<< "[0] Salir" << endl
+			<< "Ingrese una opcion [0...3]" << endl;
 		cin >> op;
-		if (op == 0) break;
+		
 		Dataframe* nuevo = dfs[i];
 		switch (op) {
 		case '1':
@@ -112,16 +163,16 @@ void crearDF(vector<Dataframe*>& dfs) {
 			break;
 		case '2':
 			
-			cin >> nombre;
-			cin >> c;
-			nuevo->Filtrar_Empieza(nombre,c);
+			filtrar(nuevo);
+			
 			break;
 		case '3':
 			//nuevo = ordenar(dfs[i]);
 			break;
 		}
 		if (nuevo != nullptr) {
-			dfs.push_back(nuevo);
+			
+			if (op != '0') dfs.push_back(nuevo);
 		}
 	} while (op != '0');
 }
